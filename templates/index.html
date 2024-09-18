@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Tutors4You</title>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align items horizontally */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow for depth */
+    position: relative;
+    height: auto; /* Allow the height to adjust based on content */
+}
+
+header img {
+    position: absolute; /* Position the logo absolutely */
+    top: 6%; /* Adjust according to padding */
+    left: 15px; /* Adjust according to padding */
+    width: 12%; /* Responsive width based on header width */
+    max-width: 80px; /* Limit maximum width */
+    height: 80%; /* Maintain aspect ratio */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+}
+
+header h1 {
+    margin: 20px 0 10px; /* Adjust margins to position message centrally */
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+nav {
+    margin-top: 10px; /* Space between title and navigation */
+    margin-bottom: 10px; /* Space after navigation */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Aligns navigation items horizontally */
+   justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s, text-shadow 0.3s; /* Smooth transition */
+}
+
+nav ul li a:hover {
+    color: #ddd; /* Lighten color on hover */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Add text shadow on hover */
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin: 10px;
+    padding: 20px;
+    display: inline-block;
+    width: 300px;
+    vertical-align: top;
+}
+
+.card img {
+    width: 100%; /* Ensures images fit within cards */
+    height: auto;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center; /* Center-align navigation items */
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    header img {
+        width: 20%; /* Adjust logo size for tablets */
+        max-width: 100px; /* Limit maximum width */
+    }
+
+    header h1 {
+        font-size: 24px;
+        padding-left: 80px; /* Ensure text does not overlap with logo */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header img {
+        width: 30%; /* Adjust logo size for mobile devices */
+        max-width: 80px; /* Limit maximum width */
+        top: 10px; /* Adjust top position */
+        left: auto; /* Center logo horizontally */
+        right: auto; /* Center logo horizontally */
+    }
+
+    header h1 {
+        font-size: 20px; /* Adjust font size */
+        padding-left: 60px; /* Ensure text does not overlap with logo */
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        {% load static %}
+        <img src="{% static 'images/logo.jpg' %}" alt="Tutors4You Logo"> <!-- Logo positioned top-left -->
+        <h1>Welcome to Tutors4You</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'about-us' %}">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>About Us</h2>
+            <p>At Tutors4You, we are dedicated to providing top-notch educational resources and tutoring services. Our experienced team is here to help you achieve your academic goals.</p>
+        </section>
+        <section>
+            <h2>Our Services</h2>
+            <div class="card">
+                <img src="{% static 'images/personal-tutoring.jpg' %}" alt="Personal Tutoring"> <!-- Add image for Personal Tutoring -->
+                <h3>Personal Tutoring</h3>
+                <p>One-on-one tutoring tailored to your individual needs.</p>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/group-classes.jpg' %}" alt="Group Classes"> <!-- Add image for Group Classes -->
+                <h3>Group Classes</h3>
+                <p>Interactive group sessions to enhance learning.</p>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/online-courses.jpg' %}" alt="Online Courses"> <!-- Add image for Online Courses -->
+                <h3>Online Courses</h3>
+                <p>Access to a wide range of online educational materials.</p>
+            </div>
+        </section>
+        <section>
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                {% csrf_token %}
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tutors4You. All rights reserved.</p>
+        <ul>
+            <li><a href="{% url 'index' %}">Privacy Policy</a></li>
+            <li><a href="{% url 'index' %}">Contact Us</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

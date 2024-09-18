@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Tutors4You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header img {
+            width: 150px; /* Adjust as needed */
+            height: auto;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+        .scrolling-paragraph {
+            height: 150px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: white;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .image-gallery img {
+            width: 300px;
+            height: auto;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+        footer ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .image-gallery img {
+                width: 90%;
+            }
+        }
+        @media (max-width: 480px) {
+            header img {
+                width: 120px; /* Smaller logo for small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Tutors4You Logo"> <!-- Add your logo image here -->
+        <h1>About Us - Tutors4You</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                {% comment %} <li><a href="{% url 'index' %}">About Us</a></li> {% endcomment %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>About Our Mission</h2>
+            <div class="scrolling-paragraph">
+                <p>At Tutors4You, our mission is to revolutionize education by providing tailored tutoring services that cater to each student’s unique learning style. Our team of dedicated educators is committed to helping students achieve their academic goals through personalized support and innovative teaching methods. We believe in fostering a positive learning environment where students can thrive and reach their full potential.</p>
+            </div>
+        </section>
+        <section>
+            <h2>Our Team</h2>
+            <div class="image-gallery">
+                <img src="team-member1.jpg" alt="Team Member 1"> <!-- Add your team images here -->
+                <img src="team-member2.jpg" alt="Team Member 2">
+                <img src="team-member3.jpg" alt="Team Member 3">
+                <img src="team-member4.jpg" alt="Team Member 4">
+            </div>
+        </section>
+        <section>
+            <h2>Our Achievements</h2>
+            <div class="image-gallery">
+                <img src="achievement1.jpg" alt="Achievement 1"> <!-- Add achievement images here -->
+                <img src="achievement2.jpg" alt="Achievement 2">
+                <img src="achievement3.jpg" alt="Achievement 3">
+            </div>
+        </section>
+        <section>
+            <h2>Our History</h2>
+            <p>Founded in 2024, Tutors4You started with a vision to make quality education accessible to all. Our journey began with a small team of passionate educators and has grown into a leading platform providing comprehensive tutoring services. Our commitment to excellence has driven us to expand our offerings and continually enhance our services to meet the evolving needs of our students.</p>
+        </section>
+        <section>
+            <h2>Our Values</h2>
+            <p>We uphold values of integrity, dedication, and inclusivity in all our endeavors. Our focus is on creating an environment where students feel valued and supported. We believe in continuous improvement and are dedicated to fostering a culture of respect and excellence.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tutors4You. All rights reserved.</p>
+        <ul>
+            <li><a href="{% url 'index' %}">Privacy Policy</a></li>
+            <li><a href="{% url 'index' %}">Contact Us</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
