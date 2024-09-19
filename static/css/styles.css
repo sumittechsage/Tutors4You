@@ -1,0 +1,242 @@
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    /* Adjusted padding */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Added shadow for separation */
+}
+
+header img {
+    width: 150px;
+    /* Adjust as needed */
+    height: auto;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    /* Increased spacing for clarity */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* Styles for message box */
+#message-box {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    /* Smooth transition for opacity and transform */
+    opacity: 1;
+    /* Ensure the message box is visible by default */
+}
+
+/* Hidden state for message box */
+#message-box.hidden {
+    opacity: 0;
+    /* Hide the message box */
+    transform: translateY(-20px);
+    /* Slide up effect */
+}
+
+/* Styles for individual messages */
+.message {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    /* Smooth transition for opacity and transform */
+    opacity: 1;
+    /* Ensure messages are visible by default */
+}
+
+/* Success message styles */
+.message.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    /* Slight border for better definition */
+}
+
+/* Error message styles */
+.message.error {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+    /* Slight border for better definition */
+}
+
+/* Add animation for message appearance */
+.message-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.message-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.message-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Main content styles */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    /* Remove any extra margins */
+}
+
+/* Registration container styles */
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    /* Adjust as needed */
+    padding: 20px;
+    margin: 0 auto;
+    /* Center the container */
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 20px;
+    /* Increased spacing for form elements */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    /* Adjusted spacing */
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    /* Increased padding for better usability */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group .error {
+    color: #d9534f;
+    margin-top: 5px;
+    font-size: 0.875em;
+}
+
+.form-group .error::before {
+    content: "⚠ ";
+}
+
+.form-group input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    /* Increased padding */
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Footer styles */
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    /* Added padding for spacing */
+    margin-top: auto;
+    /* Push footer to the bottom */
+}
+
+/* Footer navigation */
+footer ul {
+    list-style-type: none;
+    margin: 10px 0 0;
+    /* Adjusted margin for spacing */
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 15px;
+    /* Increased spacing */
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .registration-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        width: 120px;
+        /* Smaller logo for small screens */
+    }
+}

@@ -4,131 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Tutors4You</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        header img {
-            width: 150px; /* Adjust as needed */
-            height: auto;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .registration-container {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            width: 100%;
-            max-width: 500px; /* Adjust as needed */
-            padding: 20px;
-            margin: auto;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .form-group .error {
-            color: #d9534f;
-            margin-top: 5px;
-            font-size: 0.875em;
-        }
-        .form-group .error::before {
-            content: "⚠ ";
-        }
-        .form-group input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        .form-group input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-        }
-        footer ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        footer ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-        footer ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        footer ul li a:hover {
-            text-decoration: underline;
-        }
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .registration-container {
-                width: 90%;
-            }
-        }
-        @media (max-width: 480px) {
-            header img {
-                width: 120px; /* Smaller logo for small screens */
-            }
-        }
-    </style>
+    <!-- Load static files -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Tutors4You Logo"> <!-- Add your logo image here -->
+        <img src="{% static 'images/logo.png' %}" alt="Tutors4You Logo">
         <h1>Register - Tutors4You</h1>
         <nav>
             <ul>
@@ -139,47 +21,52 @@
         </nav>
     </header>
     <main>
-        <div class="registration-container">
+        <div class="form-container">
+            <!-- Display messages -->
+            <div id="message-box">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="message {{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
             <form action="{% url 'register' %}" method="post">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-                    {% if form.username.errors %}
-                        <div class="error">{{ form.username.errors }}</div>
+                    <label for="first_name">*First Name:</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                    {% if form.first_name.errors %}
+                        <div class="error">{{ form.first_name.errors }}</div>
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name">
+                    {% if form.last_name.errors %}
+                        <div class="error">{{ form.last_name.errors }}</div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="email">*Email:</label>
                     <input type="email" id="email" name="email" required>
                     {% if form.email.errors %}
                         <div class="error">{{ form.email.errors }}</div>
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
+                    <label for="password">*Password:</label>
                     <input type="password" id="password" name="password" required>
                     {% if form.password.errors %}
                         <div class="error">{{ form.password.errors }}</div>
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    <label for="confirm_password">Confirm Password:</label>
+                    <label for="confirm_password">*Confirm Password:</label>
                     <input type="password" id="confirm_password" name="confirm_password" required>
                     {% if form.confirm_password.errors %}
                         <div class="error">{{ form.confirm_password.errors }}</div>
                     {% endif %}
                 </div>
-                {% comment %} <div class="form-group">
-                    <label for="role">Role:</label>
-                    <select id="role" name="role" required>
-                        <option value="student">Student</option>
-                        <option value="tutor">Tutor</option>
-                    </select>
-                    {% if form.role.errors %}
-                        <div class="error">{{ form.role.errors }}</div>
-                    {% endif %}
-                </div> {% endcomment %}
                 <div class="form-group">
                     <input type="submit" value="Register">
                 </div>
@@ -193,5 +80,7 @@
             <li><a href="{% url 'index' %}">Contact Us</a></li>
         </ul>
     </footer>
+    <!-- Load JavaScript file -->
+    <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>
