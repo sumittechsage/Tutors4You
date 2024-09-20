@@ -1,10 +1,7 @@
 window.onload = function () {
     const form = document.querySelector('form');
     const messageBox = document.getElementById('message-box');
-
-    console.log('Form:', form);
-    console.log('Message Box:', messageBox);
-
+    
     if (messageBox) {
         setTimeout(() => {
             messageBox.style.display = 'none';

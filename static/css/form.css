@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Ensures padding is included in width/height */
+}
+
+/* Registration/Login container styles */
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 20px;
+    /* Reduced top padding */
+    margin: 0 auto;
+    min-height: 400px;
+    /* Prevent layout shifts */
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group .error {
+    color: #d9534f;
+    margin-top: 5px;
+    font-size: 0.875em;
+}
+
+.form-group .error::before {
+    content: "⚠ ";
+}
+
+.form-group input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* about us page -- img gallery */
+section {
+    margin-bottom: 2rem;
+}
+
+.scrolling-paragraph {
+    height: 150px;
+    /* width: 80%; */
+    justify-content: center;
+    align-content: center;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: white;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-gallery img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* CARD */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    display: inline-block;
+    width: 300px;
+    vertical-align: top;
+}
+
+.card img {
+    width: 100%;
+    /* Ensures images fit within cards */
+    height: auto;
+    border-radius: 8px;
+}

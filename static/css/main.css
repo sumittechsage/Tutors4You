@@ -15,46 +15,105 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Header styles */
+/* Main content styles */
+main{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    /* Remove any extra margins */
+}
+about{
+     flex: 1;
+     padding: 20px;
+     text-align: center;
+ }
 header {
     background-color: #4CAF50;
     color: white;
     padding: 15px 20px;
-    /* Adjusted padding */
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Added shadow for separation */
+    display: flex;
+    flex-direction: column;
+    /* Stack children vertically */
+    align-items: center;
+    /* Center-align items horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+    position: relative;
+    height: auto;
+    /* Allow the height to adjust based on content */
 }
 
 header img {
-    width: 150px;
-    /* Adjust as needed */
-    height: auto;
+    position: absolute;
+    /* Position the logo absolutely */
+    top: 6%;
+    /* Adjust according to padding */
+    left: 15px;
+    /* Adjust according to padding */
+    width: 12%;
+    /* Responsive width based on header width */
+    max-width: 80px;
+    /* Limit maximum width */
+    height: 80%;
+    /* Maintain aspect ratio */
+    box-sizing: border-box;
+    /* Include padding and border in the element’s total width and height */
 }
 
-/* Navigation styles */
+header h1 {
+    margin: 20px 0 10px;
+    /* Adjust margins to position message centrally */
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    /* Text shadow for readability */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* NAVIGATION STYLE */
+nav {
+    margin-top: 10px;
+    /* Space between title and navigation */
+    margin-bottom: 10px;
+    /* Space after navigation */
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    /* Aligns navigation items horizontally */
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
-    /* Increased spacing for clarity */
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s, text-shadow 0.3s;
+    /* Smooth transition */
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #ddd;
+    /* Lighten color on hover */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    /* Add text shadow on hover */
 }
 
 
+
+/* API MESSAGES */
 /* Styles for message box */
 #message-box {
     margin: 20px;
@@ -124,76 +183,9 @@ nav ul li a:hover {
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Main content styles */
-main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin: 0;
-    /* Remove any extra margins */
-}
 
-/* Registration container styles */
-.form-container {
-    background-color: white;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 500px;
-    /* Adjust as needed */
-    padding: 20px;
-    margin: 0 auto;
-    /* Center the container */
-}
+/* Footer style */
 
-/* Form styles */
-.form-group {
-    margin-bottom: 20px;
-    /* Increased spacing for form elements */
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    /* Adjusted spacing */
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 12px;
-    /* Increased padding for better usability */
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.form-group .error {
-    color: #d9534f;
-    margin-top: 5px;
-    font-size: 0.875em;
-}
-
-.form-group .error::before {
-    content: "⚠ ";
-}
-
-.form-group input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 12px;
-    /* Increased padding */
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.form-group input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-/* Footer styles */
 footer {
     background-color: #4CAF50;
     color: white;
@@ -204,7 +196,6 @@ footer {
     /* Push footer to the bottom */
 }
 
-/* Footer navigation */
 footer ul {
     list-style-type: none;
     margin: 10px 0 0;
@@ -225,18 +216,4 @@ footer ul li a {
 
 footer ul li a:hover {
     text-decoration: underline;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .registration-container {
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    header img {
-        width: 120px;
-        /* Smaller logo for small screens */
-    }
 }
