@@ -14,7 +14,7 @@
     padding: 10px 20px;
     /* Reduced top padding */
     margin: 0 auto;
-    min-height: 400px;
+    /* min-height: 400px; */
     /* Prevent layout shifts */
 }
 
@@ -65,6 +65,21 @@ section {
     margin-bottom: 2rem;
 }
 
+.scrollable-container {
+    /* border: 1px solid #ccc; */
+    display: flex;
+    max-width: auto;
+    justify-content: space-between;
+    /* Evenly distribute space between cards */
+    align-items: center;
+    gap: 20px;
+    /* Add space between cards */
+    overflow-x: auto;
+    /* Allow horizontal scrolling if content exceeds screen width */
+    padding: 10px;
+    /* Add padding around the container */
+}
+
 .scrolling-paragraph {
     height: 150px;
     /* width: 80%; */
@@ -105,9 +120,145 @@ section {
     vertical-align: top;
 }
 
+
 .card img {
     width: 100%;
     /* Ensures images fit within cards */
     height: auto;
     border-radius: 8px;
+}
+
+/* Style for Ask a Query button */
+.btn {
+    display: flex;
+    /* Use flexbox to align icon and text in a row */
+    align-items: center;
+    /* Vertically center icon and text */
+    justify-content: center;
+    /* Horizontally center icon and text */
+    margin: 15px auto;
+    /* Center button horizontally */
+    margin-top: 60px;
+    background-color: #ff6600;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    gap: 10px;
+    /* Space between icon and text */
+}
+
+.btn:hover {
+    background-color: #e65c00;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    /* Fixed minimal space between buttons */
+    margin: 20px auto;
+    max-width: 600px;
+    /* Set a maximum width for the container */
+    width: 100%;
+    /* Allow the container to take full width up to max-width */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* Prevent scrolling */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    /* Adjust width as necessary */
+    max-width: 500px;
+    /* Set a maximum width */
+    border-radius: 5px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Optional shadow for depth */
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+}
+
+.modal-content label {
+    margin-bottom: 5px;
+    /* Space between label and input */
+}
+
+.modal-content input,
+.modal-content textarea {
+    margin-bottom: 15px;
+    /* Space between fields */
+    padding: 10px;
+    /* Padding inside input fields */
+    border: 1px solid #ccc;
+    /* Border for input fields */
+    border-radius: 4px;
+    /* Rounded corners for input fields */
+}
+
+.modal-content textarea {
+    height: 120px;
+    width: 100%;
+    /* Increase the height of the textarea */
+    resize: none;
+    /* Prevent resizing */
+}
+
+.modal-content button {
+    width: 120px;
+    /* Set a specific width for the submit button */
+    align-self: center;
+    /* Align button to the center */
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#message-box {
+    background-color: #f8d7da;
+    /* Light red background for error messages */
+    color: #721c24;
+    /* Dark red text */
+    padding: 10px;
+    margin-top: 15px;
+    /* Space above the message box */
+    border: 1px solid #f5c6cb;
+    /* Border for the message box */
+    border-radius: 4px;
+    /* Rounded corners */
+    display: none;
+    /* Hidden by default */
+    max-width: 100%;
+    /* Prevent overflow */
 }

@@ -7,12 +7,12 @@
 
 html,
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #f4f4f4;
 }
 
 /* Main content styles */
