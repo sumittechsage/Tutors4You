@@ -193,15 +193,12 @@ footer {
     background-color: #9d38d0;
     color: white;
     text-align: center;
-    align-items: center;
     padding: 15px 20px;
-    /* Added padding for spacing */
     margin-top: auto;
     /* Push footer to the bottom */
 }
 
 footer ul {
-    
     list-style-type: none;
     margin: 10px 0 0;
     /* Adjusted margin for spacing */
@@ -209,9 +206,10 @@ footer ul {
 }
 
 footer ul li {
-    display: inline;
-    /* margin-bottom: 20px; */
-    /* Increased spacing */
+    display: block;
+    /* Change to block to stack vertically */
+    margin-bottom: 10px;
+    /* Add spacing between items */
 }
 
 footer ul li a {
