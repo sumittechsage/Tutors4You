@@ -26,7 +26,7 @@ print("BASE_DIR: ", BASE_DIR )
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', False)
 
 
 # Application definition
