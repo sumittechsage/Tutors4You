@@ -198,25 +198,16 @@ footer {
     /* Push footer to the bottom */
 }
 
-footer ul {
-    list-style-type: none;
-    margin: 10px 0 0;
-    /* Adjusted margin for spacing */
-    padding: 0;
-}
-
-footer ul li {
-    display: block;
-    /* Change to block to stack vertically */
+footer div {
     margin-bottom: 10px;
     /* Add spacing between items */
 }
 
-footer ul li a {
+footer a {
     color: white;
     text-decoration: none;
 }
 
-footer ul li a:hover {
+footer a:hover {
     text-decoration: underline;
 }

@@ -145,19 +145,17 @@
     </about>
     
     <footer>
-        <ul>
-        <li>
-            <i class="fas fa-envelope"></i>  <!-- Email icon -->
-            <a href="mailto:{{ email }}">{{ email }}</a>
-        </li>
-        <br>
-        <li>
-            <i class="fas fa-phone"></i>  <!-- Phone icon -->
-            <a href="tel:{{phone_no}}">{{phone_no}}</a>
-        </li>
-    </ul>
-        <p>&copy; 2024 Tutors4You. All rights reserved.</p>
-    </footer>
+    <div>
+        <i class="fas fa-envelope"></i>  <!-- Email icon -->
+        <a href="mailto:{{ email }}">{{ email }}</a>
+    </div>
+    <div>
+        <i class="fas fa-phone"></i>  <!-- Phone icon -->
+        <a href="tel:{{ phone_no }}">{{ phone_no }}</a>
+    </div>
+    <p>&copy; 2024 Tutors4You. All rights reserved.</p>
+</footer>
+
 
     <!-- Modal Structure -->
     <div id="queryModal" class="modal">
