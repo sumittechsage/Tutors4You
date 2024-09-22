@@ -7,9 +7,12 @@ from home.models import UserQuery
 
 
 def IndexPageView(request):
-    email = os.getenv('EMAIL_HOST_USER')
-    phone_no = os.getenv('PHONE_NUMBER')
-    return render(request, 'index.html', {'email' : email, 'phone_no' : phone_no}) # render index.html
+    try:
+        email = os.getenv('EMAIL_HOST_USER')
+        phone_no = os.getenv('PHONE_NUMBER')
+        return render(request, 'index.html', {'email' : email, 'phone_no' : phone_no}) # render index.html
+    except Exception as e:  
+        print("exception in index view: ", str(e))
 
 
 def UserQueryView(request):
@@ -26,5 +29,6 @@ def UserQueryView(request):
         return redirect('index') 
     
     except Exception as e:
+        print("exception in query view: ", str(e))
         messages.error(request, 'Something Went Wrong')
         return redirect('index') 
