@@ -193,6 +193,7 @@ footer {
     background-color: #9d38d0;
     color: white;
     text-align: center;
+    align-items: center;
     padding: 15px 20px;
     /* Added padding for spacing */
     margin-top: auto;
@@ -200,6 +201,7 @@ footer {
 }
 
 footer ul {
+    
     list-style-type: none;
     margin: 10px 0 0;
     /* Adjusted margin for spacing */
@@ -207,7 +209,7 @@ footer ul {
 }
 
 footer ul li {
-    display: inline;
+    display: block;
     margin: 0 15px;
     /* Increased spacing */
 }

@@ -11,8 +11,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 ALLOWED_HOSTS = ['https://tutors4you.onrender.com']
+CORS_ALLOWED_ORIGINS = ['https://tutors4you.onrender.com']
 
 # CSRF_TRUSTED_ORIGINS = [
 #     'https://tutors4you.onrender.com',
 # ]
-CORS_ALLOWED_ORIGINS = ['https://tutors4you.onrender.com']
