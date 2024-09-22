@@ -26,7 +26,9 @@ print("BASE_DIR: ", BASE_DIR )
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', False)
+DEBUG = True
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -60,8 +62,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
-ALLOWED_HOSTS = ['*']
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://innotunes.onrender.com',
+# ]
+CORS_ALLOWED_ORIGINS = []
 
 
 ROOT_URLCONF = 'core.urls'
