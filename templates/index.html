@@ -146,9 +146,16 @@
     
     <footer>
         <ul>
-            <li><a href="mailto:{{ email }}">{{ email }}</a></li>
-            <li><a href="tel:{{phone_no}}">{{phone_no}}</a></li>
-        </ul>
+        <li>
+            <i class="fas fa-envelope"></i>  <!-- Email icon -->
+            <a href="mailto:{{ email }}">{{ email }}</a>
+        </li>
+        <br>
+        <li>
+            <i class="fas fa-phone"></i>  <!-- Phone icon -->
+            <a href="tel:{{phone_no}}">{{phone_no}}</a>
+        </li>
+    </ul>
         <p>&copy; 2024 Tutors4You. All rights reserved.</p>
     </footer>
 

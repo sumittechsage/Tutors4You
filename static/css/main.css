@@ -209,8 +209,8 @@ footer ul {
 }
 
 footer ul li {
-    display: block;
-    margin: 0 15px;
+    display: inline;
+    /* margin-bottom: 20px; */
     /* Increased spacing */
 }
 
