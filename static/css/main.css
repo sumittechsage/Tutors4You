@@ -35,34 +35,20 @@ header {
     color: white;
     padding: 15px 20px;
     display: flex;
-    flex-direction: column;
-    /* Stack children vertically */
     align-items: center;
-    /* Center-align items horizontally */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Shadow for depth */
-    position: relative;
-    height: auto;
-    /* Allow the height to adjust based on content */
+    /* Center items vertically */
 }
 
 header img {
-    position: absolute;
-    /* Position the logo absolutely */
-    top: 6%;
-    /* Adjust according to padding */
-    left: 15px;
-    /* Adjust according to padding */
     width: 12%;
     /* Responsive width based on header width */
     max-width: 80px;
     /* Limit maximum width */
-    height: 80%;
+    height: auto;
     /* Maintain aspect ratio */
-    box-sizing: border-box;
-    /* Include padding and border in the element’s total width and height */
+    margin-right: 15px;
+    /* Space between logo and text */
 }
-
 header h1 {
     margin: 20px 0 10px;
     /* Adjust margins to position message centrally */
@@ -193,21 +179,32 @@ footer {
     background-color: #9d38d0;
     color: white;
     text-align: center;
+    align-items: center;
     padding: 15px 20px;
+    /* Added padding for spacing */
     margin-top: auto;
     /* Push footer to the bottom */
 }
 
-footer div {
-    margin-bottom: 10px;
-    /* Add spacing between items */
+footer ul {
+    
+    list-style-type: none;
+    margin: 10px 0 0;
+    /* Adjusted margin for spacing */
+    padding: 0;
 }
 
-footer a {
+footer ul li {
+    display: inline-block;
+    /* margin-bottom: 20px; */
+    /* Increased spacing */
+}
+
+footer ul li a {
     color: white;
     text-decoration: none;
 }
 
-footer a:hover {
+footer ul li a:hover {
     text-decoration: underline;
 }
