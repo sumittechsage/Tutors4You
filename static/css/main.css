@@ -31,7 +31,7 @@ about{
      text-align: center;
  }
 header {
-    background-color: #4CAF50;
+    background-color: #9d38d0;
     color: white;
     padding: 15px 20px;
     display: flex;
@@ -116,13 +116,15 @@ nav ul li a:hover {
 /* API MESSAGES */
 /* Styles for message box */
 #message-box {
-    margin: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    /* Smooth transition for opacity and transform */
-    opacity: 1;
-    /* Ensure the message box is visible by default */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    /* Adjusts width based on content */
+    z-index: 1000;
+    /* Ensure it appears above other elements */
+    display: none;
+    /* Initially hidden */
 }
 
 /* Hidden state for message box */
@@ -138,6 +140,7 @@ nav ul li a:hover {
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 10px;
+    max-width: 30%;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     /* Smooth transition for opacity and transform */
     opacity: 1;
@@ -187,7 +190,7 @@ nav ul li a:hover {
 /* Footer style */
 
 footer {
-    background-color: #4CAF50;
+    background-color: #9d38d0;
     color: white;
     text-align: center;
     padding: 15px 20px;
